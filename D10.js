@@ -566,18 +566,39 @@ const print = () => {
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 header("esercizio30")
+
+const changeA = () => {
+  const a= document.querySelectorAll("body a")
+      a.forEach(elem=> elem.style.backgroundColor = "red")
+}
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 header("esercizio31")
+
+const addElement = () => {
+  const ul = document.getElementById("#myList")
+  const li= document.createElement("li")
+  li.innerText= "new li"
+  ul.appendChild(li)
+}
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 header("esercizio32")
+
+const toEmpty = () => {
+  const ul = document.getElementById("#myList")
+  ul.toEmpty()
+}
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 header("esercizio33")
+const addClass = () => {
+  const tr = document.querySelectorAll("body tr")
+  tr.classlist.add("test")
+}
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
