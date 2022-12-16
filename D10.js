@@ -138,18 +138,18 @@ header("esercizio12")
 
 const onlyLetters = (string) =>{
 let arrayString= string.split("")
+const newString=[]
   for (let i = 0; i < arrayString.length; i++) {
 
     for (let ind = 0; ind < 10; ind++) {
       const number = ind;
-      if ( arrayString[i] === parseInt(number)) {
-
-        arrayString[i].splice(0,1)
-        console.log(arrayString[i]);
+      if ( arrayString[i] !== parseInt(number)) {
+        newString.push(arrayString[i])
       }
     }
+    
   }
-  return arrayString.join("")
+  return newString.join("")
 }
 
 
