@@ -546,6 +546,7 @@ header("esercizio26")
 header("esercizio27")
 
 const container = document.getElementById("#container")
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
