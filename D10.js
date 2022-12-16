@@ -137,31 +137,73 @@ console.log(deleteOne("ciao amici", "false"));
 header("esercizio12")
 
 const onlyLetters = (string) =>{
-let arrayString= string.split("")
-const newString=[]
+let arrayString= string.split("") 
+// trasformo la stringa in array
   for (let i = 0; i < arrayString.length; i++) {
-
+    // ciclo ogni lettera dell'array
     for (let ind = 0; ind < 10; ind++) {
-      const number = ind;
-      if ( arrayString[i] !== parseInt(number)) {
-        newString.push(arrayString[i])
+      let number = ind;
+      // ciclo dei numeri da 0 a 9 e li inserisco in una variabile
+      if (parseInt(arrayString[i]) === number) {
+        // se l'elemento dell'array e un "numero" uguale al numero nella variabile
+        arrayString.splice(i,1)
+        // elimina l'elemento corrente altrimenti non fare niente
       }
     }
     
   }
-  return newString.join("")
+  // converti l'array in stringa
+  return arrayString.join("")
 }
 
 
-console.log(onlyLetters("ciao 4 coglioni"));
+console.log(onlyLetters("siamo in 2 o in 4"));
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 header("esercizio13")
+const isThisAnEmail = (string) =>{
+  let result = string.split("")
+  return result.includes("@")
+   
+}
+
+console.log(isThisAnEmail("bebo@gmail.com"));
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 header("esercizio14")
+
+const whatDayIsIt = () => {
+  let data = new Date()
+  data.getDay()
+  switch (data.getDay()) {
+    case 0:
+    giorno = "domenica";
+    break;
+    case 1:
+    giorno = "lunedì";
+    break;
+    case 2:
+    giorno = "martedì";
+    break;
+    case 3:
+    giorno = "mercoledì";
+    break;
+    case 4:
+    giorno = "giovedì";
+    break;
+    case 5:
+    giorno = "venerdì";
+    break;
+    case 6:
+    giorno = "sabato";
+    break;
+    }
+  return giorno 
+}
+
+console.log(whatDayIsIt());
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -175,10 +217,28 @@ header("esercizio14")
   }
 */
 header("esercizio15")
+
+let rollTheDices = (param) =>{
+  let object= {
+    sum: 0,
+    value: []
+  }
+  for (let i = 0; i < param; i++) {
+    let result= dice()
+      object.value.push(result)
+      object.sum += result
+  }
+  return object
+}
+
+console.log(rollTheDices("3"));
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 header("esercizio16")
+const howManyDays = (date) =>{
+
+}
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
@@ -192,6 +252,10 @@ header("esercizio17")
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 header("esercizio18")
+
+const deleteProp = (object, string) => {
+  let
+}
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
