@@ -77,7 +77,7 @@ console.log(me);
 header("esercizio8")
 
 const dice = () => {
-    const element= (Math.floor(Math.random() * 7))
+    const element= Math.floor(Math.random() * 6) +1
   return element
 }
 
@@ -163,8 +163,7 @@ console.log(onlyLetters("siamo in 2 o in 4"));
 */
 header("esercizio13")
 const isThisAnEmail = (string) =>{
-  let result = string.split("")
-  return result.includes("@")
+  return string.includes("@") && (string.includes(".it") || string.includes(".com"))
    
 }
 
