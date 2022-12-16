@@ -253,8 +253,11 @@ header("esercizio17")
 header("esercizio18")
 
 const deleteProp = (object, string) => {
-  
+  delete object[string]
+  return object
 }
+
+console.log(deleteProp(me, "name"));
 
 const movies = [
   {
