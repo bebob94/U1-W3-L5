@@ -635,21 +635,17 @@ const addClass = () => {
   ***
 
 */
-header("esercizio34")
 function halfTree(param) {
   let result = "";
-  for (i = 1; i <= param; i++) {
-    result = "";
-    for (j = i; j < param; j++) {
-      result += " ";
-    }
-    for (k = 0; k < i * 2 - 1; k++) {
+  for (let i = 1; i <= param; i++) {
+    for (let j = 1; j <= i; j++) {
       result += "*";
     }
     console.log(result);
+    result=""
   }
 }
-tree(3)
+halfTree(15)
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -665,18 +661,18 @@ header("esercizio35")
 
 function tree(param) {
   let result = "";
-  for (i = 1; i <= param; i++) {
+  for (let i = 1; i <= param; i++) {
     result = "";
-    for (j = i; j < param; j++) {
+    for (let j = i; j < param; j++) {
       result += " ";
     }
-    for (k = 0; k < i * 2 - 1; k++) {
+    for (let k = 0; k < i * 2 - 1; k++) {
       result += "*";
     }
     console.log(result);
   }
 }
-tree(4)
+tree(15)
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
