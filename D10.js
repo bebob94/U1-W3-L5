@@ -235,13 +235,26 @@ console.log(rollTheDices("3"));
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 header("esercizio16")
-const howManyDays = (date) =>{
 
+const howManyDays = (param) =>{
+  let currentDay = new Date()
+  let difference = currentDay.getTime() - param.getTime()
+  return Math.floor(difference /(1000 * 60 * 60 * 24))
 }
+
+console.log(howManyDays(new Date(2021,11,17)));
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 header("esercizio17")
+
+// const isTodayMyBirthday = () => {
+
+// let currentMonth = string(today.getMonth())
+
+
+// }
+
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
@@ -409,7 +422,7 @@ console.log(countMovies(movies));
 header("esercizio21")
 
 const onlyTheYears = (array) => {
-  const newArray=array.map(array => array.Year)
+  const newArray=array.map(elem => elem.Year)
   return newArray
 }
 console.log(onlyTheYears(movies));
@@ -423,15 +436,18 @@ const onlyInLastMillennium = (array) => {
   for (let i = 0; i < array.length; i++) {
     const element = array[i].Year;
     const filmName= array[i].Title
-    if (element <2000) {
+    if (element < 2000) {
       newArray.push(filmName)
       newArray.push(element)
     }
   }
   return newArray
 }
-console.log(onlyInLastMillennium(movies));
+console.log("risultato con for loop e if ",onlyInLastMillennium(movies));
 
+const result = movies.filter(element => element.Year < 2000)
+const YearResult = result.map(elem => elem.Year)
+console.log("risultato con filter e map ",YearResult);
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
@@ -532,13 +548,13 @@ console.log(searchAndDivide("of"));
 */
 header("esercizio26")
 
-// const removeIndex = (i) => {
-//   movies.splice(i,1)
-//   console.log(movies);
-//   return movies
-// }
+const removeIndex = (i) => {
+  movies.splice(i,1)
+  console.log(movies);
+  return movies
+}
 
-// console.log(removeIndex(3));
+console.log(removeIndex(0));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -547,14 +563,18 @@ header("esercizio26")
 */
 header("esercizio27")
 
+const searchId = () =>{
 const container = document.getElementById("#container")
+}
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 header("esercizio28")
 
+const tag = () =>{
 const allTd = document.querySelectorAll("body td")
+}
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
@@ -616,6 +636,20 @@ const addClass = () => {
 
 */
 header("esercizio34")
+function halfTree(param) {
+  let result = "";
+  for (i = 1; i <= param; i++) {
+    result = "";
+    for (j = i; j < param; j++) {
+      result += " ";
+    }
+    for (k = 0; k < i * 2 - 1; k++) {
+      result += "*";
+    }
+    console.log(result);
+  }
+}
+tree(3)
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -628,9 +662,37 @@ header("esercizio34")
 
 */
 header("esercizio35")
+
+function tree(param) {
+  let result = "";
+  for (i = 1; i <= param; i++) {
+    result = "";
+    for (j = i; j < param; j++) {
+      result += " ";
+    }
+    for (k = 0; k < i * 2 - 1; k++) {
+      result += "*";
+    }
+    console.log(result);
+  }
+}
+tree(4)
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
+header("esercizio36")
 
+function isItPrime(num) {
+  for (let i = 2; num > i; i++) {
+    if (num % i === 0) {
+      console.log(num, "non è un numero primo");
+      return false ;
+    }
+  }
+  console.log(num, "non è un numero primo");
+  return num > 1;
+}
+
+isItPrime(17);
